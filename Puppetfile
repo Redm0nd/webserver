@@ -1,7 +1,7 @@
 forge "https://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
-
+mod "puppetlabs/apt"
 mod "puppetlabs/concat"
 mod "puppetlabs/ntp"
 mod "puppetlabs/stdlib"
