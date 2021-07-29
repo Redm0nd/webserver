@@ -7,4 +7,3 @@ mod "puppetlabs/ntp"
 mod "puppetlabs/stdlib"
 mod "puppet/staging"
 mod 'puppet-logrotate'
-mod 'puppet-nginx', '2.1.1'
