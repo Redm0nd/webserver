@@ -1,20 +1,17 @@
 class profile::website {
-  if ($facts['os']['name'] == 'ubuntu') {
-    include 'apt'
+
+  include 'apache'
+
+  apache::vhost { 'localhost':
+    port    => '8080',
+    docroot => '/var/www/demo-website',
   }
-  include 'nginx'
-  nginx::resource::server{'localhost':
-      use_default_location => false,
-      www_root             => '/var/www/demo-website',
-  }
+  
   file { [ '/var/www',
            '/var/www/demo-website', ]:
     ensure => directory,
     recurse => 'true',
     mode    => '0755',
-    owner   => 'nginx',
-    group   => 'nginx',
     source  => 'puppet:///modules/profile/demo-website/',
-    require => Package['nginx'],
   }
 }
